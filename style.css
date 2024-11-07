@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    animation: bodyColorChange 15s infinite alternate; /* Color cycling effect for body */
+}
+
+.outer-container {
+    background-color: #1c1c1c; /* Initial dark gray background */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 450px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 2s forwards, colorChange 10s infinite alternate; /* Combine fade and color change for outer-container */
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #ff0000;
+    margin-bottom: 10px;
+    animation: textSlideIn 1s ease-out;
+}
+
+.avatar img {
+    border: 3px solid #ff0000;
+    border-radius: 50%;
+    width: 100px;
+    animation: zoomIn 1s ease-out;
+}
+
+p {
+    color: #fff;
+    animation: fadeInText 1.5s ease-out;
+}
+
+input[type="text"], select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #ff0000;
+    padding: 8px;
+    border-radius: 5px;
+    width: 80%;
+    margin: 15px 0;
+    transition: border-color 0.3s;
+}
+
+button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    animation: buttonPulse 2s infinite;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+button:focus, input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #ff4500;
+    box-shadow: 0 0 5px #ff4500;
+}
+
+.footer {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes textSlideIn {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bodyColorChange {
+    0% { background-color: #1c1c1c; }   /* Dark Gray */
+    25% { background-color: #ff0000; }   /* Red */
+    50% { background-color: #0066cc; }   /* Blue */
+    75% { background-color: #00cc66; }   /* Green */
+    100% { background-color: #ffcc00; }  /* Yellow */
+}
